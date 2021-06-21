@@ -2,7 +2,7 @@
 Safie API client library for Python
 
 # Requirement
-A subscription is required to use the Safie API. Please refer to this link for details.
+A subscription is required to use the Safie API. Please refer to this link for details.<br>
 https://developers.safie.link/
 
 # Installation
