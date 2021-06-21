@@ -26,7 +26,7 @@ safie = pysafie.Safie(client_id, client_secret, redirect_uri)
 safie.get_access_token(authentication_code)
 
 res = safie.get_device_list() # Returns requests' response object
-print(json.loads(res.text))
+print(res.json())
 ```
 
 If you have already stored token information, you can set it when you create an instance.
@@ -46,7 +46,7 @@ safie = pysafie.Safie(client_id, client_secret, redirect_uri,
                       access_token, refresh_token, expires_at)
 
 res = safie.get_device_list() # Returns requests' response object
-print(json.loads(res.text))
+print(res.json())
 ```
 
 # Note
