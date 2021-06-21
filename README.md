@@ -50,7 +50,7 @@ print(res.json())
 ```
 
 # Note
-For now, this library only supports devices and media_files APIs.
+For now, this library only supports auth, devices, and media_files APIs.
 
 
 # Author
