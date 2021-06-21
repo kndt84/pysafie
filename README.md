@@ -40,7 +40,7 @@ redirect_uri = 'https://localhost/'
 
 access_token = 'hogehoge'
 refresh_token = 'hogehoge'
-expires_at = 'hogehoge'
+expires_at = 1624247730 # Set the token expiration in unix time
 
 safie = pysafie.Safie(client_id, client_secret, redirect_uri, 
                       access_token, refresh_token, expires_at)
