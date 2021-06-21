@@ -2,7 +2,7 @@
 Safie API client library for Python
 
 # Requirement
-A contract is required to use the Safie API. Please refer to this link for details.
+A subscription is required to use the Safie API. Please refer to this link for details.
 https://developers.safie.link/
 
 # Installation
@@ -48,6 +48,10 @@ safie = pysafie.Safie(client_id, client_secret, redirect_uri,
 res = safie.get_device_list() # Returns requests' response object
 print(json.loads(res.text))
 ```
+
+# Note
+For now, this library only supports devices and media_files APIs.
+
 
 # Author
 * kndt84
