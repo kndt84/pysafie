@@ -1,4 +1,5 @@
-# pysafie: Safie API client library for Python
+# pysafie
+Safie API client library for Python
 
 # Requirement
 A contract is required to use the Safie API. Please refer to this link for details.
@@ -48,5 +49,9 @@ res = safie.get_device_list() # Returns requests' response object
 print(json.loads(res.text))
 ```
 
+# Author
+* kndt84
+* Future Standard Co., Ltd.
 
-
+# License
+pysafie is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
