@@ -28,8 +28,7 @@ class Safie:
             'code': authorization_code
         }
         res = requests.post(url, data=payload)
-        d = json.loads(res.text)
-        print(d)
+        d = res.json()
         self.access_token = d['access_token']
         self.refresh_token = d['refresh_token']
         self.expires_at = int(time.time()) + d['expires_in']
