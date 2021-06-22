@@ -6,7 +6,7 @@ A subscription is required to use the Safie API. Please refer to this link for d
 https://developers.safie.link/
 
 # Installation
-```sh
+```
 pip install git+https://github.com/kndt84/pysafie
 ```
 
