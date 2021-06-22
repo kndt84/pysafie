@@ -19,8 +19,9 @@ import pysafie
 
 client_id = 'hogehoge'
 client_secret = 'hogehoge'
-redirect_uri = 'https://localhost/'
-authentication_code = 'hogehoge'
+redirect_uri = 'https://hoge.com/'
+
+authentication_code = 'hogehoge' # Need to get it from the redirected URL
 
 safie = pysafie.Safie(client_id, client_secret, redirect_uri)
 safie.get_access_token(authentication_code)
@@ -36,7 +37,7 @@ import pysafie
 
 client_id = 'hogehoge'
 client_secret = 'hogehoge'
-redirect_uri = 'https://localhost/'
+redirect_uri = 'https://hoge.com/'
 
 access_token = 'hogehoge'
 refresh_token = 'hogehoge'
