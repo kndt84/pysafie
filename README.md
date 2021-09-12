@@ -7,7 +7,7 @@ https://developers.safie.link/
 
 # Installation
 ```
-pip install git+https://github.com/kndt84/pysafie
+pip install pysafie
 ```
 
 # Usage
