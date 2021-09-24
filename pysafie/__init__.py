@@ -28,11 +28,14 @@ class Safie:
             'code': authorization_code
         }
         res = requests.post(url, data=payload)
-        d = res.json()
-        self.access_token = d['access_token']
-        self.refresh_token = d['refresh_token']
-        self.expires_at = int(time.time()) + d['expires_in']
-        return res
+        if res.status_code == 200:
+            d = res.json()
+            self.access_token = d['access_token']
+            self.refresh_token = d['refresh_token']
+            self.expires_at = int(time.time()) + d['expires_in']
+            return True, res
+        else:
+            return False, res
 
     def refresh_access_token(self):
         url = '{}/v1/auth/refresh-token'.format(BASE_URL)
