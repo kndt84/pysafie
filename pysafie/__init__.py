@@ -27,7 +27,7 @@ class Safie:
             'redirect_uri': self.redirect_uri,
             'code': authorization_code
         }
-        res = requests.post(url, data=payload)
+        res = requests.post(url, params=payload)
         if res.status_code == 200:
             d = res.json()
             self.access_token = d['access_token']
@@ -46,7 +46,7 @@ class Safie:
             'refresh_token': self.refresh_token,
             'scope': 'safie-api'
         }
-        res = requests.post(url, data=payload)
+        res = requests.post(url, params=payload)
         d = json.loads(res.text)
         self.access_token = d['access_token']
         self.refresh_token = d['refresh_token']
@@ -66,7 +66,7 @@ class Safie:
             payload = {
                 'timestamp': timestamp.strftime('%Y-%m-%dT%H:%M:%S+0900')
             }
-            return requests.get(url, headers=headers, data=payload)
+            return requests.get(url, headers=headers, params=payload)
 
     def get_device_thumbnail(self, device_id):
         url = '{}/v1/devices/{}/thumbnail'.format(
@@ -86,7 +86,7 @@ class Safie:
             'limit': limit,
             'item_id': item_id
         }
-        return requests.get(url, headers=headers, data=payload)
+        return requests.get(url, headers=headers, params=payload)
 
     def register_device_event(self, device_id, event_id, timestamp):
         url = '{}/v1/devices/{}/events/{}'.format(
@@ -97,7 +97,7 @@ class Safie:
         payload = {
             'timestamp': timestamp.strftime('%Y-%m-%dT%H:%M:%S+0900')
         }
-        return requests.get(url, headers=headers, data=payload)
+        return requests.get(url, headers=headers, params=payload)
 
     def get_device_event_list(self, device_id, start_datetime, end_datetime, offset=0, limit=20):
         start = start_datetime.strftime('%Y-%m-%dT%H:%M:%S+0900')
@@ -112,7 +112,7 @@ class Safie:
             'offset': offset,
             'limit': limit
         }
-        return requests.get(url, headers=headers, data=payload)
+        return requests.get(url, headers=headers, params=payload)
 
     def get_device_media_list(self, device_id, start_datetime, end_datetime):
         start = start_datetime.strftime('%Y-%m-%dT%H:%M:%S+0900')
@@ -125,7 +125,7 @@ class Safie:
             'start': start,
             'end': end
         }
-        return requests.get(url, headers=headers, data=payload)
+        return requests.get(url, headers=headers, params=payload)
 
     def get_device_location(self, device_id):
         url = '{}/v1/devices/{}/location'.format(BASE_URL, device_id)
