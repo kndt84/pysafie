@@ -27,7 +27,7 @@ class Safie:
             'redirect_uri': self.redirect_uri,
             'code': authorization_code
         }
-        res = requests.post(url, params=payload)
+        res = requests.post(url, data=payload)
         if res.status_code == 200:
             d = res.json()
             self.access_token = d['access_token']
@@ -46,7 +46,7 @@ class Safie:
             'refresh_token': self.refresh_token,
             'scope': 'safie-api'
         }
-        res = requests.post(url, params=payload)
+        res = requests.post(url, data=payload)
         d = json.loads(res.text)
         self.access_token = d['access_token']
         self.refresh_token = d['refresh_token']
